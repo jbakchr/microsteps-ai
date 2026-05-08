@@ -75,3 +75,34 @@ Help me relax instead of watching youtube and such things
 
 ---
 
+### Date:
+
+2026-05-08
+
+### Input:
+
+My kitchen is a mess with quite a few things that I'll need to do for washing the dishes
+
+### Output:
+
+- Clear off one small area of countertop
+- Pick up and put away one item
+- Load first dishwasher rack
+
+### Felt (quick impression):
+
+- 👍 Good
+
+#### Note (optional)
+
+I don't have a dishwasher but just the small first thing about "Clear off one small area of countertop" was very motivational and manageable
+
+### Action:
+
+- ✅ Did step 1
+
+### Optional note: why / why not
+
+Although I only did step 1 after awhile I somehow feel that step 1 from the output sort of got stuck in the back of my head in a good way that eventually made me do this wery concrete step. And even though I didn't do more than that initial I was sort "pumped up" to wanting to do the next step - or at least something completely different but though still related to cleaning other stuff. So it was motivational at least - and actually in a very good sense - since it sort of annoys me in general that I'm not good at getting things done. So .. overall a quite - if not very - good experience
+
+---
