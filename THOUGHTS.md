@@ -34,3 +34,11 @@ Example of related steps with regards to doing my dishes:
 This example would be sort a "dream example" so I don't expect the/a model to be able to produce something like this - and that's okay!
 
 The main take-away here is at least to try and prompt the model to suggest 3 microsteps steps that are really, really related to each other as this feels like something that would make me do various things better and more motivated.
+
+## Step 1 is SUPER important!!
+
+As the header says .. step 1 is SUPER, SUPER important in that getting that "nailed" feels like it would make me really want to act on whatever it is I would like to act on!!!
+
+So .. perhaps it should be (very) important to make the AI model make the first step 1 as easy, manageable, concrete and motivational since this seems to make me feel like "Hell yeah! I can do this!" - and also kinda "Who cares if don't get step 2 done! At least I got started and got one thing done and now I'm 'pumped' to get stuff out of the way (finished or not)!".
+
+In short: this one thing makes the whole thing feel SO good! And exactly why I wanted to code this project in the first place!
