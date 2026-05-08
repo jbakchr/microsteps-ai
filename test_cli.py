@@ -9,10 +9,14 @@ response = requests.post(
 
 data = response.json()
 
+# ✅ Clear separation
+print("\n" + "=" * 40)
+print("YOUR INPUT:")
+print(f"{task}")
+print("=" * 40)
 
-print("\n--- Micro-steps ---")
-
-print("\nStart here:\n")
+print("\n--- MICRO-STEPS ---\n")
+print("Start here:\n")
 
 for i, step in enumerate(data["microsteps"], start=1):
     if i == 1:
@@ -20,3 +24,4 @@ for i, step in enumerate(data["microsteps"], start=1):
     else:
         print(f"   Step {i}: {step}")
 
+print("\n" + "=" * 40 + "\n")
