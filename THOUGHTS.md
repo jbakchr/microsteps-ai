@@ -42,3 +42,24 @@ As the header says .. step 1 is SUPER, SUPER important in that getting that "nai
 So .. perhaps it should be (very) important to make the AI model make the first step 1 as easy, manageable, concrete and motivational since this seems to make me feel like "Hell yeah! I can do this!" - and also kinda "Who cares if don't get step 2 done! At least I got started and got one thing done and now I'm 'pumped' to get stuff out of the way (finished or not)!".
 
 In short: this one thing makes the whole thing feel SO good! And exactly why I wanted to code this project in the first place!
+
+## CLI output - separate input from output
+
+As of now when running "py test_cli.py" for testing the project the total output (meaning the prompt + my input + AI output) looks like this:
+
+"What do you want to do? Get some clothes folded and put away (nicely) in my closet since the clothes have been on my chair for way too long
+
+--- Micro-steps ---
+
+Start here:
+
+👉 Step 1: Pick up one worn-out t-shirt
+   Step 2: Fold it neatly into a square shape
+   Step 3: Put it directly into the closet shelf"
+
+From this its quite a good addition to get finger emoji pointing at step 1. So that's nice.
+
+In general, however, and also taking the project being a sort of cli right now, the total output from running the project should:
+
+- be separate more clearly into what is the "input part" of the output and what is the "output part" (meaning the suggestion header and 3 AI steps)
+- perhaps coloring - and even some sort of "top level" header - might be a good way to both make use, feel and feel of usefulness of using the project even better
