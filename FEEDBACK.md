@@ -46,4 +46,32 @@ YYYY-MM-DD
 
 ## Entries
 
-(append new entries below)
+### Date:
+
+2026-05-08
+
+### Input:
+
+Help me relax instead of watching youtube and such things
+
+### Output:
+
+- Set aside 10 minutes for yourself alone.
+- Put away all screens and devices in this room.
+- Make your bed, making it a peaceful space.
+
+### Felt (quick impression):
+
+- Somewhere between "👍 Good" and "😐 Okay"
+
+(Short note if needed)
+
+### Action:
+
+- I eventually laid down on my couch, relaxed and fell asleep although Youtube was running while I had my eyes closed
+- Still felt good to relax / getting a quick nap which gave me a bit more energy and eager to get some things done (transfer of money and paying an overdue electrical bill) done after my nap
+
+### Optional note: why / why not
+
+---
+
