@@ -9,7 +9,14 @@ response = requests.post(
 
 data = response.json()
 
-print("\nMicro-steps:\n")
 
-for step in data["microsteps"]:
-    print(f"- {step}")
+print("\n--- Micro-steps ---")
+
+print("\nStart here:\n")
+
+for i, step in enumerate(data["microsteps"], start=1):
+    if i == 1:
+        print(f"👉 Step {i}: {step}")
+    else:
+        print(f"   Step {i}: {step}")
+
