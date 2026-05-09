@@ -32,7 +32,8 @@ YYYY-MM-DD
 - 😐 Okay
 - 👎 Not useful
 
-(Short note if needed)
+#### Optional note: why / why not
+
 
 ### Action:
 
@@ -140,3 +141,36 @@ Although a first and very easy step could have just been like "lie down on your 
 As mentioned above: just by taking step 1 and breathing to relax I sort of didn't need - although it was good to have more suggestions - more steps to get myself to relax. Just one suggestion for trying to relax was in some way enough to get me to do a bit more relaxing things by myself.
 
 ---
+
+### Date:
+
+2026-05-09
+
+### Input:
+
+How do I best relax - perhaps even get a quick nap - before my plan of going out later to night at 20:30
+
+### Output:
+
+- 👉 Step 1: Turn off all screens (phone, TV, computer).
+
+- Step 2: Dim the room lights and adjust temperature.
+- Step 3: Put on cozy pajamas or comfortable clothes.
+
+### Felt (quick impression):
+
+- Felt "👍 Good" but also just "😐 Okay" (see below note)
+
+#### Optional note: why / why not
+
+As I'm beginning to both use and reap the benefits of using the tool I actually almost instant just closed down my Macbook, layed on my side and closed my eyes on my couch in order to try and get some rest. So, this was extremely good!
+
+The reason why I also label the suggestions as only "Okay" is because at least the last, third suggestion is rather useless (even though I kinda didn't even pay it much attention and still just acted - almost immediately! - on step number 1). And the reason why it is, and was, kinda useless (actual: totally useless) was because of the time of the day that I asked the AI model for help. It was around 17:30 and .. I sure as hell wouldn't put on any pyjamas at that point of the day in order to get some rest / relax! Its suggestion of "comfortable clothes" clothes was, and is, actually good. But to have been most useful the model should perhaps be instructed to take the time of day into account (see thoughts.md about that)
+
+### Action:
+
+- ✅ Did step 1
+
+### Optional note: why / why not
+
+In short: Because I now can use the model and it's suggestion - after fine tuning everything and experimenting with it - so that I almost instantly already do a Step 1 without hesitation. Which is awesome right now!!
