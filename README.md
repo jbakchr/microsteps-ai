@@ -14,7 +14,24 @@ Instead, the focus is to explore:
 - Whether these steps actually reduce friction
 - Whether they lead to **real-world action**
 
-This project is currently in an **experimental phase**, where the main purpose is to learn what works (and what doesn’t).
+---
+
+## Current Insight (Important)
+
+The system is no longer just experimental — it has shown early signs of being genuinely useful.
+
+Especially:
+
+- A **very small first step** can be enough to trigger action
+- Action does not need to be immediate — it can “stick” and happen later
+- In some cases, even a single step can:
+  - reduce resistance
+  - create momentum
+  - or lead to a feeling of **relief**
+
+The goal is not to produce perfect plans — but to:
+
+> ✅ help make *starting* feel easier
 
 ---
 
@@ -24,52 +41,51 @@ The system:
 
 - Takes a task as input (e.g. `clean kitchen`)
 - Uses a local AI model (via Ollama)
-- Returns **a small number of micro-steps** designed to help start the task
+- Returns **3 micro-steps** designed as a small, coherent sequence
 
 Example:
 
 ```
 
-Input:
-clean kitchen
+👉 Step 1: Pick up one dirty dish
 
-Output:
-
-*   Go to kitchen and look at counter
-*   Pick up items from one small area
-*   Put them in sink or trash
+Step 2: Put it in the sink
+Step 3: Wipe down the counter beside it
 
 ```
 
 ---
 
-## Important Insight (So Far)
+## Important Learnings (So Far)
 
-The quality of the output depends heavily on the **input**.
+- ✅ Specific inputs → much better results  
+  (`clean kitchen` > `clean apartment`)
 
-Better results come from:
+- ✅ Steps work best when:
+  - they are in the same context
+  - they build on each other
+  - they form a small “flow”
 
-- ✅ Specific inputs: `clean kitchen`, `clean desk`
-- ❌ Broad inputs: `clean apartment`
+- ✅ Step 1 is the most important  
+  → it should be extremely easy to start
 
-For now, the system works best when the task is already **narrow and concrete**.
+- ✅ Steps 2–3 are often optional  
+  → their role is to suggest continuation, not enforce it
 
 ---
 
 ## Feedback Loop (Core of This Project)
 
-A key part of this project is manually tracking how the system performs in real life.
-
-All usage is logged in:
+All real-world usage is tracked in:
 
 👉 `FEEDBACK.md`
 
 Each entry captures:
 
-- Input (what was asked)
-- Output (what the model suggested)
-- Felt quality (good / okay / bad)
-- Actual behavior (did I act or not)
+- Input
+- Output
+- Felt usefulness
+- What actually happened (action or not)
 
 ---
 
@@ -77,17 +93,22 @@ Each entry captures:
 
 The goal is not:
 
-> "Do the steps look good?"
+> “Did the output look good?”
 
 But:
 
-> ✅ "Did this help me _start_ something?"
+> ✅ “Did this help me move, think differently, or act — even later?”
 
-This feedback loop helps identify:
+---
 
-- Which types of inputs work best
-- What makes steps feel _startable_
-- When suggestions lead to action (or not)
+## Current State
+
+- ✅ Backend is stable (for now)
+- ✅ CLI interface is simple but effective
+- ✅ Output format supports action (Step 1 focus)
+- ✅ Feedback loop is in active use
+
+The project is now in a **usage and learning phase**, not a building phase.
 
 ---
 
@@ -104,7 +125,7 @@ This feedback loop helps identify:
 pip install -r requirements.txt
 ```
 
----
+***
 
 ## Run
 
@@ -112,49 +133,42 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
----
+***
 
-## Test (API)
-
-```bash
-curl -X POST http://localhost:8000/generate-microsteps \
-  -H "Content-Type: application/json" \
-  -d '{"task": "clean kitchen"}'
-```
-
----
-
-## Simple CLI Test
+## CLI Usage
 
 ```bash
 python test_cli.py
 ```
 
----
+***
 
-## Notes (Current State)
+## Notes (Current Direction)
 
-- No persistence (by design)
-- No frontend (yet)
-- No memory or personalization
-- Focus is purely on generating micro-steps
+*   No persistence
+*   No memory system
+*   No complex frontend
 
-This is intentional to keep the project simple and focused.
+This is intentional.
 
----
+The focus remains:
+
+> ✅ understanding what actually helps in real-life situations
+
+***
 
 ## Possible Future Directions
 
-(Not prioritized yet — depends on feedback and learning)
+(Not prioritized — will depend on continued usage)
 
-- CLI improvements
-- Desktop quick-capture tool
-- Guided input (help narrow broad tasks)
-- Task “start mode” vs “execute mode”
-- Smarter prompts based on feedback patterns
+*   Better input guidance
+*   Lightweight UI / frontend
+*   Modes (start vs execute)
+*   Improvements based on feedback patterns
 
----
+***
 
 ## License
 
 MIT
+

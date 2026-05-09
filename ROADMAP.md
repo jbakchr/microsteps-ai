@@ -3,126 +3,102 @@
 This document captures potential future directions for the project.
 
 The purpose is **not to commit to building these features**,  
-but to remember ideas and avoid losing them while staying focused  
-on the current experimental phase.
+but to remember ideas while staying focused on real-world usage.
 
 ---
 
-## 🧭 Current Focus (Do NOT expand yet)
+## 🧭 Current Focus (Stay Here)
 
-- Generate micro-steps for starting tasks
-- Improve prompt quality
-- Learn what works through real usage
-- Document experience in `FEEDBACK.md`
+- Use the tool in real-life situations
+- Continue logging in `FEEDBACK.md`
+- Identify patterns:
+  - What makes steps work
+  - When they lead to action
+  - When they do not
+
+The project is currently in a **stabilization and learning phase**.
 
 ---
 
 ## 💡 Possible Future Enhancements
 
-### 1. Simple CLI Tool
+### 1. CLI Refinements
 
-A small CLI wrapper for daily usage, e.g.:
+Small usability improvements:
 
-```
-
-ms "clean kitchen"
-
-```
+- loading indicator (spinner)
+- small visual tweaks
+- faster input/output loop
 
 Purpose:
 
-- faster interaction
-- reduce friction when using the tool
+- reduce friction during use
 
 ---
 
-### 2. Desktop “Quick Capture” Tool
+### 2. Lightweight Frontend (Later)
 
-A minimal UI (possibly Electron/Tauri) with:
+A minimal UI (desktop or browser-based) with:
 
-- single input field
-- instant micro-step generation
-- always available while working
+- one input field
+- immediate output
+- strong visual presence
 
 Purpose:
 
-- make the tool part of daily workflow
-- reduce friction at the moment of need
+- make the tool more “present” in everyday use
 
 ---
 
-### 3. Improved Input Handling
+### 3. Better Input Handling
 
-#### a) Guiding the user
-
-Help transform vague inputs:
-
-```
-
-clean apartment → suggest: clean kitchen / living room / bathroom
-
-```
-
-#### b) Automatic narrowing
-
-System internally selects a starting area for broad tasks
+- guide vague inputs
+- suggest narrower alternatives
+- possibly auto-narrow large tasks
 
 ---
 
 ### 4. Different Modes
 
-Possible modes depending on situation:
-
-- **Start mode** (current focus)
-  - ultra-small steps
-  - focused on initiation
-
-- **Execution mode**
-  - slightly larger, more productive steps
-
-- **Low-energy mode**
-  - even lower barrier steps
+- **Start mode** (current behavior)
+- **Execution mode** (slightly larger steps)
+- **Low-energy mode** (even lower barrier)
 
 ---
 
-### 5. Better Output Experience
+### 5. Output Improvements
 
-- clearer formatting (CLI or UI)
-- visually structured steps
-- possibly one-step-at-a-time interaction
+- stronger visual focus on Step 1
+- step-by-step progression (optional)
+- better readability / emphasis
 
 ---
 
-### 6. Learning From Feedback (later stage)
+### 6. Learning from Feedback (Later)
 
 Use patterns from `FEEDBACK.md` to:
 
-- improve prompts
-- adjust step style
-- detect what leads to action
-
-Note:
-This should only be explored after enough real usage data has been collected.
+- refine prompts
+- adjust step behavior
+- identify what creates “stickiness”
 
 ---
 
 ## 🚫 What NOT to do (for now)
 
-To keep focus:
-
-- Do not build persistence/database
-- Do not add user accounts
-- Do not build complex UI yet
-- Do not implement memory/context systems
+- No database / persistence
+- No user system
+- No complex architecture
+- No memory/RAG systems
 
 ---
 
 ## 🧠 Guiding Principle
 
-The goal is not to build a feature-rich system.
+This is not a feature-building project.
 
-The goal is to learn:
+It is a learning process:
 
-> **What actually helps me start doing things.**
+> ✅ What actually helps me start doing things?
 
-All future development should be based on that.
+Everything else is secondary.
