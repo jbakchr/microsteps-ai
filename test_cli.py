@@ -1,6 +1,11 @@
 import requests
 
-task = input("What do you want to do? ")
+
+BOLD = "\033[1m"
+RESET = "\033[0m"
+
+
+task = input(BOLD + "What do you want to do?\n\n> " + RESET)
 
 response = requests.post(
     "http://localhost:8006/generate-microsteps",
@@ -9,18 +14,14 @@ response = requests.post(
 
 data = response.json()
 
-# ✅ Clear separation
 print("\n" + "=" * 40)
-print("YOUR INPUT:")
-print(f"{task}")
-print("=" * 40)
-
-print("\n--- MICRO-STEPS ---\n")
-print("Start here:\n")
+print(BOLD + "START HERE" + RESET)
+print("=" * 40 + "\n")
 
 for i, step in enumerate(data["microsteps"], start=1):
     if i == 1:
         print(f"👉 Step {i}: {step}")
+        print()  # extra space after step 1
     else:
         print(f"   Step {i}: {step}")
 
