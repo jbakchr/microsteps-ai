@@ -19,37 +19,42 @@ def spinner(stop_event):
     sys.stdout.write("\r" + " " * 20 + "\r")  # clean up line
 
 
-# ✅ Input (with spacing as you liked)
-task = input(BOLD + "What do you want to do?\n\n> " + RESET)
+def main():
+    # ✅ Input (with spacing as you liked)
+    task = input(BOLD + "What do you want to do?\n\n> " + RESET)
 
-# ✅ Start spinner
-stop_event = threading.Event()
-spinner_thread = threading.Thread(target=spinner, args=(stop_event,))
-spinner_thread.start()
+    # ✅ Start spinner
+    stop_event = threading.Event()
+    spinner_thread = threading.Thread(target=spinner, args=(stop_event,))
+    spinner_thread.start()
 
-# ✅ Make request
-response = requests.post(
-    "http://localhost:8006/generate-microsteps",
-    json={"task": task}
-)
+    # ✅ Make request
+    response = requests.post(
+        "http://localhost:8006/generate-microsteps",
+        json={"task": task}
+    )
 
-# ✅ Stop spinner
-stop_event.set()
-spinner_thread.join()
+    # ✅ Stop spinner
+    stop_event.set()
+    spinner_thread.join()
 
-data = response.json()
+    data = response.json()
 
-line = "=" * 50
+    line = "=" * 50
 
-print("\n" + line)
-print(BOLD + "START HERE" + RESET)
-print(line + "\n")
+    print("\n" + line)
+    print(BOLD + "START HERE" + RESET)
+    print(line + "\n")
 
-for i, step in enumerate(data["microsteps"], start=1):
-    if i == 1:
-        print(f"👉 Step {i}: {step}")
-        print()
-    else:
-        print(f"   Step {i}: {step}")
+    for i, step in enumerate(data["microsteps"], start=1):
+        if i == 1:
+            print(f"👉 Step {i}: {step}")
+            print()
+        else:
+            print(f"   Step {i}: {step}")
 
-print("\n" + line + "\n")
+    print("\n" + line + "\n")
+
+
+if __name__ == "__main__":
+    main()

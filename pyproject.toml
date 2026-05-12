@@ -1,0 +1,14 @@
+[project]
+name = "microsteps-ai"
+version = "0.1.0"
+description = "CLI tool for generating micro-steps to reduce friction"
+requires-python = ">=3.11"
+dependencies = [
+    "requests"
+]
+
+[project.scripts]
+microsteps = "cli.main:main"
+
+[tool.setuptools]
+packages = ["cli"]
