@@ -8,7 +8,7 @@ dependencies = [
 ]
 
 [project.scripts]
-microsteps = "cli.main:main"
+microsteps = "interfaces.cli.main:main"
 
 [tool.setuptools]
-packages = ["cli"]
+packages = ["interfaces.cli"]
