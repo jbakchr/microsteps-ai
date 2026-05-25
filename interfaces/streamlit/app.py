@@ -34,10 +34,19 @@ if st.button("Generate microsteps"):
                     if not steps:
                         st.warning("No steps generated. Try being more specific.")
                     else:
-                        st.markdown("### ✅ Try this:")
+                        st.markdown("---")
 
-                        for i, step in enumerate(steps, 1):
-                            st.markdown(f"**{i}. {step}**")
+                        # Step 1 (highlighted)
+                        st.markdown(f"👉 **Step 1: {steps[0]}**")
+
+                        st.markdown("")
+
+                        # Remaining steps (less emphasis)
+                        for i, step in enumerate(steps[1:], 2):
+                            st.markdown(f"   Step {i}: {step}")
+
+                        st.markdown("---")
+
 
             except Exception as e:
                 st.error(f"Error: {e}")
