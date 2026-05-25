@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.schemas.request import GenerateRequest
-from app.schemas.response import GenerateResponse
-from app.ai.ollama_client import generate_microsteps
+from backend.schemas.request import GenerateRequest
+from backend.schemas.response import GenerateResponse
+from backend.ai.ollama_client import generate_microsteps
 
 app = FastAPI()
 

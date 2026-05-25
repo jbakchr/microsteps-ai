@@ -1,6 +1,6 @@
 import requests
-from app.ai.prompt_builder import build_prompt
-from app.ai.parser import parse_steps
+from backend.ai.prompt_builder import build_prompt
+from backend.ai.parser import parse_steps
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "llama3"
