@@ -1,49 +1,54 @@
 # microsteps-ai
 
-A simple local AI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
+A simple, local AI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
 
 ---
 
-## Goal (Current Focus)
+## 🧠 Purpose
 
-The goal of this project is **not** to build a full productivity system.
+This project is **not** about productivity or planning.
 
-Instead, the focus is to explore:
+It is about:
 
-- How to generate _startable_ micro-steps
-- Whether these steps actually reduce friction
-- Whether they lead to **real-world action**
+> ✅ Helping initiate action in the real world
 
----
+The goal is not:
+- to generate “perfect” steps  
+- to optimize completion  
 
-## Current Insight (Important)
+The goal is:
 
-The system is no longer just experimental — it has shown early signs of being genuinely useful.
-
-Especially:
-
-- A **very small first step** can be enough to trigger action
-- Action does not need to be immediate — it can “stick” and happen later
-- In some cases, even a single step can:
-  - reduce resistance
-  - create momentum
-  - or lead to a feeling of **relief**
-
-The goal is not to produce perfect plans — but to:
-
-> ✅ help make *starting* feel easier
+> ✅ To make starting feel easy
 
 ---
 
-## Current Behavior
+## 🎯 Success Criteria
 
-The system:
+The system is successful if:
 
-- Takes a task as input (e.g. `clean kitchen`)
-- Uses a local AI model (via Ollama)
-- Returns **3 micro-steps** designed as a small, coherent sequence
+- ✅ You start doing something  
+- ✅ The first step feels easy  
+- ✅ Resistance is reduced  
 
-Example:
+---
+
+## ⚙️ How It Works
+
+The current system follows a simple loop:
+
+```
+
+input → generate → act → reflect
+
+```
+
+- You provide a task (e.g. “clean kitchen”)
+- The system generates **3 small micro-steps**
+- You act immediately (ideally without overthinking)
+
+---
+
+## ✅ Example Output
 
 ```
 
@@ -56,78 +61,74 @@ Step 3: Wipe down the counter beside it
 
 ---
 
-## Important Learnings (So Far)
+## 🧠 Key Learnings So Far
 
-- ✅ Specific inputs → much better results  
-  (`clean kitchen` > `clean apartment`)
+- ✅ **Specific inputs → much better outputs**
+  - "clean kitchen" > "clean apartment"
 
-- ✅ Steps work best when:
-  - they are in the same context
-  - they build on each other
-  - they form a small “flow”
+- ✅ **Step 1 is everything**
+  - It should feel almost too easy
 
-- ✅ Step 1 is the most important  
-  → it should be extremely easy to start
+- ✅ **Momentum matters more than structure**
+  - Steps 2–3 are optional
 
-- ✅ Steps 2–3 are often optional  
-  → their role is to suggest continuation, not enforce it
-
----
-
-## Feedback Loop (Core of This Project)
-
-All real-world usage is tracked in:
-
-👉 `FEEDBACK.md`
-
-Each entry captures:
-
-- Input
-- Output
-- Felt usefulness
-- What actually happened (action or not)
+- ✅ Even small actions can:
+  - reduce resistance  
+  - create momentum  
+  - lead to delayed action  
 
 ---
 
-## Why This Matters
+## 📦 Project Structure
 
-The goal is not:
+```
 
-> “Did the output look good?”
+backend/          → AI + logic ("the brain")
+interfaces/
+cli/           → command-line interface
+streamlit/     → optional UI interface (future/experimental)
+docs/            → context, feedback, evolution
 
-But:
-
-> ✅ “Did this help me move, think differently, or act — even later?”
-
----
-
-## Current State
-
-- ✅ Backend is stable (for now)
-- ✅ CLI interface is simple but effective
-- ✅ Output format supports action (Step 1 focus)
-- ✅ Feedback loop is in active use
-
-The project is now in a **usage and learning phase**, not a building phase.
+```
 
 ---
 
-## Requirements
+## 🚀 Setup
+
+### Requirements
 
 - Python 3.11+
 - Ollama running locally
 
 ---
 
-## Install
+### Install
 
 ```bash
 pip install -r requirements.txt
+````
+
+***
+
+### Install CLI (global command)
+
+From project root:
+
+```bash
+pip install -e .
+```
+
+This makes the CLI available globally:
+
+```bash
+microsteps
 ```
 
 ***
 
-## Run
+## ⚡ Usage
+
+### 1. Start backend
 
 ```bash
 uvicorn backend.main:app --reload --port 8006
@@ -135,40 +136,101 @@ uvicorn backend.main:app --reload --port 8006
 
 ***
 
-## CLI Usage
+### 2. Run CLI (from anywhere)
 
 ```bash
-python test_cli.py
+microsteps
 ```
 
 ***
 
-## Notes (Current Direction)
+### 3. Typical flow
 
-*   No persistence
-*   No memory system
-*   No complex frontend
-
-This is intentional.
-
-The focus remains:
-
-> ✅ understanding what actually helps in real-life situations
+* Open terminal
+* Run `microsteps`
+* Enter task
+* Start acting immediately
 
 ***
 
-## Possible Future Directions
+## 🧠 Architecture Principles
 
-(Not prioritized — will depend on continued usage)
+* ✅ Backend = **behavior + logic**
+* ✅ CLI = **simple interface**
+* ✅ System = minimal, local, fast
 
-*   Better input guidance
-*   Lightweight UI / frontend
-*   Modes (start vs execute)
-*   Improvements based on feedback patterns
+The CLI should stay **dumb and frictionless**  
+The backend may evolve (refinement, modes, etc.)
 
 ***
 
-## License
+## 🧪 Feedback Loop
+
+All real-world usage is tracked in:
+
+```
+docs/FEEDBACK.md
+```
+
+Each entry captures:
+
+* Input
+* Output
+* Whether you acted
+* How it felt
+
+***
+
+## 🧭 Current Phase
+
+The project is in a:
+
+> ✅ **Usage + learning phase**
+
+Not a feature-building phase.
+
+Focus is on:
+
+* What actually helps you start
+* What reduces friction
+* What creates real-world action
+
+***
+
+## 🔮 Possible Future Directions
+
+(Not prioritized — only if supported by real usage)
+
+* Input refinement (handle vague tasks)
+* Different modes (low-energy, execution)
+* Structured feedback (lightweight)
+* Simple UI for faster access
+
+***
+
+## 🚫 Non-Goals
+
+* Not a productivity system
+* Not a task manager
+* Not a complex AI framework
+* Not optimized for scale
+
+***
+
+## 🧠 Core Idea
+
+This is not just a tool.
+
+It is:
+
+> ✅ A behavior trigger
+
+The value is not in the output alone  
+but in what it makes you **do next**
+
+***
+
+## 📄 License
 
 MIT
 
