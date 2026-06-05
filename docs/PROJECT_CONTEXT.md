@@ -7,22 +7,61 @@ microsteps-ai is a simple, local AI tool that helps reduce friction when startin
 The focus is NOT productivity, planning, or task management.
 
 The focus is:
-> Helping initiate action in the real world.
+
+> ✅ Helping initiate action in the real world
 
 ---
 
 ## 🎯 Core philosophy
 
 The goal is not:
-- to generate “good” steps  
-- to optimize task completion  
+
+- to generate “good” steps
+- to optimize task completion
 
 The goal is:
-> to generate steps that actually make me start
+
+> ✅ to generate steps that actually make me start
 
 Success is measured by:
+
 - Did I act?
 - Did it feel easy to start?
+
+---
+
+## ⚡ Key realization (important)
+
+The system already works.
+
+The biggest risk is no longer:
+
+❌ “bad outputs”
+
+The biggest risk is:
+
+> ❗ Not using the tool
+
+Because:
+
+- The tool can already trigger action
+- But only if it is **easy and fast to access**
+
+---
+
+## 🔁 Current behavior loop
+
+What actually happens in practice:
+
+```
+
+trigger → open tool → act
+
+```
+
+The tool is becoming:
+
+> ✅ A behavior trigger (not just a generator)
 
 ---
 
@@ -32,32 +71,51 @@ The system currently works as:
 
 ```
 
-input → generate steps → manual reflection
+input → generate steps → act → manual reflection
 
 ```
 
 Key characteristics:
+
 - Works best with specific inputs (e.g. "clean kitchen")
 - Struggles with broad inputs (e.g. "clean apartment")
-- Feedback is manually logged in FEEDBACK.md
+- CLI is globally available (`microsteps`)
+- Backend runs locally and acts as the “brain”
+- Feedback is logged in `FEEDBACK.md`
 - Focus is experimental and behavior-driven
 
 ---
 
-## 🔍 Key insight so far
+## 🏗️ Current architecture (important)
 
-The main bottleneck is:
-> Input quality and step “startability”
+```
 
-Good outputs depend heavily on:
-- how concrete the input is
-- how small and physical the steps feel
+CLI (interface) → Backend (logic) → AI model
+
+```
+
+Principles:
+
+- CLI is intentionally **simple and “dumb”**
+- Backend contains **behavior + logic**
+- System is local-first and fast
+
+---
+
+## 🔍 Key insights so far
+
+- ✅ Specific inputs → much better results
+- ✅ Step 1 is the most important
+- ✅ Small, physical steps work best
+- ✅ Action can happen immediately OR later
+- ✅ The tool works even with imperfect outputs
+- ✅ Availability and ease-of-use are critical
 
 ---
 
 ## 🧭 Intended direction (high level)
 
-The project may evolve into a more structured system:
+The system may evolve into:
 
 ```
 
@@ -65,33 +123,40 @@ input → refine → generate → interact → feedback → learn
 
 ```
 
-The intention is NOT to make it complex, but to:
+But:
+
+> ❗ This must remain simple
+
+The goal is NOT to build a complex system, but to:
+
 - reduce friction
 - improve usefulness
-- learn from real usage
+- reinforce real-world action
 
 ---
 
-## 🧱 Near-term evolution ideas
+## 🧱 Near-term evolution priorities
 
-### 1. Input refinement
+### 1. Protect usage (highest priority)
+
+- Keep access friction near zero
+- Maintain fast CLI interaction
+- Avoid anything that makes usage harder
+
+---
+
+### 2. Input refinement (next step)
+
 - detect vague inputs
 - suggest narrower starting points
-- guide the user toward something startable
+- guide toward something startable
 
 ---
 
-### 2. Mode-based generation
-- start mode → small activation steps (default)
-- low-energy mode → extremely easy steps
-- execution mode → slightly more productive steps
+### 3. Output quality (gradual improvement)
 
----
-
-### 3. Structured feedback
-- automatic logging (instead of manual)
-- simple structured format (JSON-like)
-- easier to analyze patterns over time
+- make Step 1 even easier to act on
+- improve physicality and clarity of steps
 
 ---
 
@@ -109,15 +174,17 @@ To:
 
 ```
 
-input → refine → generate → interact → feedback → store
+input → refine → generate → interact → feedback
 
 ```
 
 This is the transition from:
-> a script  
+
+> a script
 
 to:
-> a simple system
+
+> a simple behavior system
 
 ---
 
@@ -133,28 +200,33 @@ to:
 ## ✅ What makes this project different
 
 This is not:
+
 - a chatbot
 - a summarizer
 - a productivity app
 
 This is:
-> a behavior-focused tool
+
+> ✅ a behavior-focused tool
 
 It aims to:
+
 - reduce mental friction
 - help initiate action
-- learn from real-world usage
+- reinforce useful habits
 
 ---
 
 ## 🧠 Why this matters (personally)
 
 This project is useful for:
+
 - executive function challenges
 - difficulty starting tasks
 - reducing overwhelm
 
 It is both:
+
 - a technical experiment
 - a personal support tool
 
@@ -162,13 +234,12 @@ It is both:
 
 ## 🚀 What I want help with in a new chat
 
-- Evolving this into a structured but still simple system
+- Evolving this into a simple but structured system
 - Keeping it minimal and practical (avoid overengineering)
-- Learning real AI engineering patterns (not just tools)
+- Designing behavior-first improvements (not feature-first)
 - Iterating step-by-step based on real usage
 
-
-***
+---
 
 # 💡 How to use it
 
@@ -181,5 +252,3 @@ I’m working on this project:
 
 I want help evolving it step-by-step without overengineering. Let’s start with [X].
 ```
-
-
