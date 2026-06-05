@@ -1,198 +1,234 @@
 # microsteps-ai – Roadmap
 
-This document captures potential future directions for the project.
+This document outlines **what to explore next based on real-world usage**.
 
-The purpose is **not to commit to building features**,  
-but to guide **what to explore next based on real-world usage**.
+This is NOT a feature roadmap.
+
+It is a guide for:
+
+> ✅ what actually improves real-world action
 
 ---
 
 ## 🧭 Current Phase: Usage + Behavior Learning
 
-The project is currently in a:
+The project is in a:
 
-> ✅ **stabilization and learning phase**
+✅ **usage-first phase**
 
 Focus:
 
-- Use the tool in real-life situations
-- Maintain consistent usage
-- Protect and reinforce the “start → act” behavior loop
-- Continue logging in `FEEDBACK.md`
+- Use the tool in real situations
+- Maintain frequent usage
+- Strengthen the “trigger → act” loop
+- Log real experiences in `FEEDBACK.md`
 
 ---
 
-## 🔥 Most Important Insight Right Now
+## 🔥 Most Important Insight
 
-The biggest risk is no longer:
+The biggest risk is NOT:
 
-❌ Bad outputs
+❌ bad outputs
 
 The biggest risk is:
 
-> ❗ **Not using the tool at all**
+> ❗ **not using the tool at all**
 
 Because:
 
-- The tool already works well enough
+- The system already works
 - It already triggers action
-- But usage depends heavily on **availability and access**
+- But only if it is instantly accessible
 
 ---
 
-## ⚡ Priority: Reduce Access Friction
+## ⚡ Priority #1: Protect Usage
 
 Before improving intelligence:
 
-> ✅ Ensure the tool is always easy to use
+> ✅ ensure the tool is always used
 
-Current direction:
+Current state:
 
 - ✅ Global CLI (`microsteps`)
-- ✅ Fast interaction loop
-- ✅ Minimal startup friction
+- ✅ No backend / no startup step
+- ✅ Instant execution
+- ✅ Minimal friction
 
 ---
 
-## 🧱 Next Evolution Steps (In Order)
+## 🧱 Current Architecture
 
-### 1. Input Refinement (Next Step)
+```
+
+CLI → core logic → Ollama
+
+```
+
+Principles:
+
+- ✅ No backend server
+- ✅ No network layer
+- ✅ Local, fast, always available
+- ✅ CLI is simple and “dumb”
+- ✅ Core handles behavior logic
+
+---
+
+## 🧠 Key Constraints
+
+Every change must answer:
+
+- Did this reduce friction?
+- Did this make it easier to start?
+- Did I use the tool more?
+
+If not:
+
+> ❌ do not build it
+
+---
+
+## 🧱 Next Evolution Steps (in order)
+
+---
+
+### 1️⃣ Input Refinement (Next step)
 
 Problem:
 
 - Broad inputs → weak outputs
+- Example: “clean apartment”
 
 Goal:
 
-- Help the user start with something concrete
+> ✅ help the user start from something concrete
 
 Approach:
 
 - Detect vague inputs
-- Suggest 2–3 narrower starting points
-- Keep interaction lightweight
+- Suggest 2–3 smaller starting points
+- Keep interaction **optional and minimal**
 
 Important:
 
-- Do not over-engineer
-- Do not build a full system
-- Keep it fast and optional
+- ❌ no heavy interaction
+- ❌ no multi-step flows
+- ✅ must feel instant
 
 ---
 
-### 2. Output Improvement (Later)
+### 2️⃣ Improve Step 1 Quality (High leverage)
 
 Goal:
 
-- Increase “startability” of steps
+> ✅ make Step 1 almost impossible NOT to do
 
-Possible directions:
+Focus:
 
-- Stronger emphasis on Step 1
-- Better phrasing of steps
-- More physical / immediate actions
+- extremely small actions
+- physical actions only
+- <10 second effort
+- zero thinking required
+
+Examples:
+
+- ✅ “Pick up one item”
+- ❌ “Start organizing the kitchen”
 
 Important:
 
-- Evaluate only based on real-world action
-- Not based on “how good it looks”
+- Evaluate based on:
+  - Did I act immediately?
+  - Did it feel easy?
 
 ---
 
-### 3. Interaction Loop (Later)
+### 3️⃣ Optional Argument Input (Low friction gain)
 
-Current:
+Allow:
 
+```bash
+microsteps clean kitchen
 ```
 
-input → output
+Instead of:
 
 ```
-
-Possible evolution:
-
+run → type → enter
 ```
 
-input → refine → generate → user reacts
+Goal:
 
+> ✅ reduce friction from 2 steps → 1 step
+
+---
+
+### 4️⃣ Lightweight Interaction (Only if needed)
+
+Possible:
+
+```
+input → refine → confirm → generate
 ```
 
 Examples:
 
-- Ask one clarifying question
-- Allow simple follow-up interaction
+- “Do you want to start with dishes, counter, or trash?”
 
 Important:
 
-- Must reduce friction, not increase it
+- ❗ must not slow down usage
+- ❗ must be skippable
+- ❗ must feel faster, not smarter
 
 ---
 
-### 4. Modes (Later)
-
-Problem:
-
-- Different situations require different types of steps
+### 5️⃣ Mode System (Only if real need appears)
 
 Possible modes:
 
-- **Start mode** → very small steps (default)
-- **Low-energy mode** → extremely easy steps
+- **Start mode (default)** → very small steps
+- **Low-energy mode** → extremely easy actions
 - **Execution mode** → slightly more progress-oriented
 
 Important:
 
-- Only introduce if real need is observed
-- Avoid adding complexity too early
+- ❌ do not add unless clearly needed
+- ❌ avoid complexity
 
 ---
 
-### 5. Feedback Structuring (Later)
+### 6️⃣ Feedback Structuring (Optional)
 
 Current:
 
-- Manual logging in `FEEDBACK.md`
+- manual logging in `FEEDBACK.md`
 
 Possible:
 
-- Lightweight structured feedback (JSON-like)
+- lightweight structured format (JSON-like)
 
 Goal:
 
-- Identify patterns over time
+- detect patterns over time
 
 Important:
 
-- Do not sacrifice reflection quality
-- Keep friction low
-
----
-
-### 6. Lightweight UI (Optional / Later)
-
-Purpose:
-
-- Make the tool more “present” and easier to access
-
-Options:
-
-- small desktop UI
-- minimal browser interface
-
-Important:
-
-- Only if CLI becomes limiting
-- Must remain fast and simple
+- ✅ keep reflection quality
+- ❌ do not add friction
 
 ---
 
 ## 🚫 What NOT to Do (Very Important)
 
+- ❌ No backend / API layer
 - ❌ No database / persistence (for now)
 - ❌ No complex architecture
-- ❌ No memory / RAG systems
+- ❌ No RAG / memory systems
 - ❌ No feature-heavy design
-- ❌ No “product thinking” over behavior thinking
+- ❌ No “product thinking”
 
 ---
 
@@ -200,7 +236,7 @@ Important:
 
 This is not a feature-building project.
 
-It is a learning process:
+It is an experiment:
 
 > ✅ What actually helps me start doing things?
 
@@ -208,14 +244,36 @@ Everything else is secondary.
 
 ---
 
-## 🔑 Core Constraint
+## 🔑 Final Constraint
 
-Every change must answer:
+The system must feel like:
 
-- Did this reduce friction?
-- Did this help me act faster?
-- Did this make starting easier?
+> ✅ a reflex
 
-If not:
+Not:
 
-👉 Do not build it
+> ❌ a tool that requires setup
+
+---
+
+## 🧭 Direction Summary
+
+From:
+
+```
+input → LLM → output
+```
+
+To:
+
+```
+trigger → microstep → action
+```
+
+This is the shift from:
+
+> ❌ generating steps
+
+to:
+
+> ✅ enabling behavior
