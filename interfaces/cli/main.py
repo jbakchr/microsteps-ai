@@ -1,8 +1,9 @@
-import requests
 import threading
 import itertools
 import sys
 import time
+
+import requests
 
 BOLD = "\033[1m"
 RESET = "\033[0m"
