@@ -1,14 +1,16 @@
 # microsteps-ai – Project Context
 
+---
+
 ## 🧠 What this project is
 
-microsteps-ai is a simple, local AI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
+microsteps-ai is a simple, local AI CLI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
 
 The focus is NOT productivity, planning, or task management.
 
 The focus is:
 
-> ✅ Helping initiate action in the real world
+✅ Helping initiate action in the real world
 
 ---
 
@@ -55,7 +57,7 @@ What actually happens in practice:
 
 ```
 
-trigger → open tool → act
+trigger → run tool → act
 
 ```
 
@@ -71,7 +73,7 @@ The system currently works as:
 
 ```
 
-input → generate steps → act → manual reflection
+input → generate → act → manual reflection
 
 ```
 
@@ -80,7 +82,8 @@ Key characteristics:
 - Works best with specific inputs (e.g. "clean kitchen")
 - Struggles with broad inputs (e.g. "clean apartment")
 - CLI is globally available (`microsteps`)
-- Backend runs locally and acts as the “brain”
+- No backend or server required
+- Core logic runs locally and calls Ollama directly
 - Feedback is logged in `FEEDBACK.md`
 - Focus is experimental and behavior-driven
 
@@ -90,15 +93,16 @@ Key characteristics:
 
 ```
 
-CLI (interface) → Backend (logic) → AI model
+CLI → core logic → AI model (Ollama)
 
 ```
 
 Principles:
 
 - CLI is intentionally **simple and “dumb”**
-- Backend contains **behavior + logic**
-- System is local-first and fast
+- Core contains **behavior + generation logic**
+- No network layer / no backend server
+- System is local-first, fast, and always available
 
 ---
 
@@ -119,7 +123,7 @@ The system may evolve into:
 
 ```
 
-input → refine → generate → interact → feedback → learn
+input → refine → generate → (light interaction) → feedback
 
 ```
 
@@ -140,23 +144,30 @@ The goal is NOT to build a complex system, but to:
 ### 1. Protect usage (highest priority)
 
 - Keep access friction near zero
-- Maintain fast CLI interaction
-- Avoid anything that makes usage harder
+- Maintain instant CLI usage
+- Avoid anything that slows down interaction
 
 ---
 
 ### 2. Input refinement (next step)
 
-- detect vague inputs
-- suggest narrower starting points
-- guide toward something startable
+- Detect vague inputs
+- Suggest narrower starting points
+- Guide toward something startable
+
+Important:
+
+- Must remain fast and optional
+- Must NOT become a multi-step interaction
 
 ---
 
-### 3. Output quality (gradual improvement)
+### 3. Step 1 quality (highest leverage)
 
-- make Step 1 even easier to act on
-- improve physicality and clarity of steps
+- Make Step 1 extremely easy
+- Focus on physical actions
+- Reduce thinking required
+- Aim for <10-second start
 
 ---
 
@@ -174,17 +185,17 @@ To:
 
 ```
 
-input → refine → generate → interact → feedback
+trigger → microstep → action
 
 ```
 
-This is the transition from:
+This is the shift from:
 
-> a script
+> a tool that generates steps
 
 to:
 
-> a simple behavior system
+> ✅ a system that triggers behavior
 
 ---
 
@@ -194,6 +205,7 @@ to:
 - Not a generic AI framework
 - Not feature-heavy or complex
 - Not optimized for scale
+- Not dependent on external services or infrastructure
 
 ---
 
@@ -241,14 +253,17 @@ It is both:
 
 ---
 
-# 💡 How to use it
+## 💡 How to use this context
 
-When you start a new chat, you can simply do:
+When starting a new chat, you can say:
 
-```text
+```
+
 I’m working on this project:
 
-[paste PROJECT_CONTEXT.md]
+\[paste PROJECT\_CONTEXT.md]
 
-I want help evolving it step-by-step without overengineering. Let’s start with [X].
+I want help evolving it step-by-step without overengineering.
+Let’s start with \[X].
+
 ```
