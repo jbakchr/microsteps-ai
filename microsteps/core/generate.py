@@ -1,34 +1,46 @@
-# microsteps/core/generate.py
-
 import ollama
 
 def generate_microsteps(task: str) -> list[str]:
+    
+
     prompt = f"""
-Break this into 3 very small, physical steps that are easy to start.
+You generate micro-steps to help someone START a task immediately.
 
-Task: {task}
+STRICT RULES:
+- Output EXACTLY 3 steps
+- Each step must be ONE short sentence
+- NO explanations
+- NO introductions
+- NO commentary
+- NO extra text before or after
+- Step 1 MUST be extremely easy (almost trivial)
+- Each step must describe a PHYSICAL action
 
-Rules:
-- Step 1 must be extremely easy
-- Focus on physical actions
-- Avoid thinking/planning steps
+BAD OUTPUT (DO NOT DO THIS):
+"Here are some steps to help..."
+"To get started, you can..."
+"Start by thinking about..."
 
-Output format:
-Step 1: ...
-Step 2: ...
-Step 3: ...
+GOOD OUTPUT (DO THIS FORMAT ONLY):
+Step 1: Pick up one item from the floor
+Step 2: Put it away
+Step 3: Stand still and look around the room
+
+TASK:
+{task}
 """
 
     response = ollama.chat(
         model="llama3",
-        messages=[{
-            "role": "user",
-            "content": prompt
-        }]
+        messages=[{"role": "user", "content": prompt}]
     )
 
     text = response["message"]["content"]
 
-    # simple parsing (keep minimal)
-    steps = [line.strip() for line in text.split("\n") if line.strip()]
+    steps = [
+        line.strip()
+        for line in text.split("\n")
+        if line.strip().startswith("Step")
+    ]
+
     return steps[:3]
