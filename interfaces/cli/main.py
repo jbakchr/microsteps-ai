@@ -3,7 +3,7 @@ import itertools
 import sys
 import time
 
-import requests
+from microsteps.core.generate import generate_microsteps  # ✅ NEW
 
 BOLD = "\033[1m"
 RESET = "\033[0m"
@@ -21,7 +21,7 @@ def spinner(stop_event):
 
 
 def main():
-    # ✅ Input (with spacing as you liked)
+    # ✅ Input (unchanged)
     task = input(BOLD + "What do you want to do?\n\n> " + RESET)
 
     # ✅ Start spinner
@@ -29,17 +29,14 @@ def main():
     spinner_thread = threading.Thread(target=spinner, args=(stop_event,))
     spinner_thread.start()
 
-    # ✅ Make request
-    response = requests.post(
-        "http://localhost:8006/generate-microsteps",
-        json={"task": task}
-    )
+    try:
+        # ✅ NEW: call local core instead of backend
+        steps = generate_microsteps(task)
 
-    # ✅ Stop spinner
-    stop_event.set()
-    spinner_thread.join()
-
-    data = response.json()
+    finally:
+        # ✅ Always stop spinner (even if something fails)
+        stop_event.set()
+        spinner_thread.join()
 
     line = "=" * 50
 
@@ -47,7 +44,7 @@ def main():
     print(BOLD + "START HERE" + RESET)
     print(line + "\n")
 
-    for i, step in enumerate(data["microsteps"], start=1):
+    for i, step in enumerate(steps, start=1):
         if i == 1:
             print(f"👉 Step {i}: {step}")
             print()
