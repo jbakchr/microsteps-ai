@@ -1,16 +1,15 @@
 # microsteps-ai
 
-A simple, local AI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
+A simple, local AI CLI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
 
 ---
 
 ## 🧠 Purpose
 
-This project is **not** about productivity or planning.
-
+This project is **not** about productivity or planning.  
 It is about:
 
-> ✅ Helping initiate action in the real world
+✅ Helping initiate action in the real world  
 
 The goal is not:
 - to generate “perfect” steps  
@@ -18,7 +17,7 @@ The goal is not:
 
 The goal is:
 
-> ✅ To make starting feel easy
+✅ To make starting feel easy  
 
 ---
 
@@ -34,17 +33,17 @@ The system is successful if:
 
 ## ⚙️ How It Works
 
-The current system follows a simple loop:
+The system follows a simple loop:
 
 ```
 
-input → generate → act → reflect
+input → generate → act
 
 ```
 
-- You provide a task (e.g. “clean kitchen”)
-- The system generates **3 small micro-steps**
-- You act immediately (ideally without overthinking)
+- You provide a task (e.g. “clean kitchen”)  
+- The system generates **3 small micro-steps**  
+- You act immediately (ideally without overthinking)  
 
 ---
 
@@ -52,10 +51,10 @@ input → generate → act → reflect
 
 ```
 
-👉 Step 1: Pick up one dirty dish
+👉 Step 1: Pick up one plate
 
 Step 2: Put it in the sink
-Step 3: Wipe down the counter beside it
+Step 3: Turn on the tap
 
 ```
 
@@ -67,50 +66,50 @@ Step 3: Wipe down the counter beside it
   - "clean kitchen" > "clean apartment"
 
 - ✅ **Step 1 is everything**
-  - It should feel almost too easy
+  - It must feel almost trivial
 
 - ✅ **Momentum matters more than structure**
   - Steps 2–3 are optional
 
-- ✅ Even small actions can:
-  - reduce resistance  
-  - create momentum  
-  - lead to delayed action  
+- ✅ **Physical actions work best**
+  - Avoid thinking/planning steps
+
+- ✅ The system works even if outputs are imperfect
+
+- ❗ The biggest risk is **not using the tool**
 
 ---
 
-## 📦 Project Structure
+## ⚡ Usage (zero setup behavior)
 
-```
-
-backend/          → AI + logic ("the brain")
-interfaces/
-cli/           → command-line interface
-streamlit/     → optional UI interface (future/experimental)
-docs/            → context, feedback, evolution
-
-```
-
----
-
-## 🚀 Setup
-
-### Requirements
-
-- Python 3.11+
-- Ollama running locally
-
----
-
-### Install
+### Run from anywhere:
 
 ```bash
-pip install -r requirements.txt
-````
+microsteps
+```
+
+Then:
+
+```
+What do you want to do?
+
+> clean kitchen
+```
+
+→ Start immediately
 
 ***
 
-### Install CLI (global command)
+## 🚀 Installation
+
+### Requirements
+
+* Python 3.11+
+* Ollama running locally
+
+***
+
+### Install CLI globally
 
 From project root:
 
@@ -126,41 +125,32 @@ microsteps
 
 ***
 
-## ⚡ Usage
+## 🧱 Project Structure
 
-### 1. Start backend
-
-```bash
-uvicorn backend.main:app --reload --port 8006
 ```
+microsteps/
+├── core/           → behavior + generation logic
+│
+interfaces/
+└── cli/           → command-line interface
 
-***
-
-### 2. Run CLI (from anywhere)
-
-```bash
-microsteps
+docs/
+└── FEEDBACK.md    → real-world usage logging
 ```
-
-***
-
-### 3. Typical flow
-
-* Open terminal
-* Run `microsteps`
-* Enter task
-* Start acting immediately
 
 ***
 
 ## 🧠 Architecture Principles
 
-* ✅ Backend = **behavior + logic**
-* ✅ CLI = **simple interface**
-* ✅ System = minimal, local, fast
+* ✅ Core = **behavior + logic**
+* ✅ CLI = **simple and frictionless**
+* ✅ System = **local, fast, always available**
 
-The CLI should stay **dumb and frictionless**  
-The backend may evolve (refinement, modes, etc.)
+There is **no backend server**.
+
+The system is designed to:
+
+> ✅ minimize friction between intention and action
 
 ***
 
@@ -185,26 +175,24 @@ Each entry captures:
 
 The project is in a:
 
-> ✅ **Usage + learning phase**
-
-Not a feature-building phase.
+✅ **Usage + learning phase**
 
 Focus is on:
 
-* What actually helps you start
-* What reduces friction
-* What creates real-world action
+* what actually triggers action
+* what reduces friction
+* what leads to real-world behavior
 
 ***
 
 ## 🔮 Possible Future Directions
 
-(Not prioritized — only if supported by real usage)
+(Only if supported by real usage)
 
-* Input refinement (handle vague tasks)
-* Different modes (low-energy, execution)
-* Structured feedback (lightweight)
-* Simple UI for faster access
+* Input refinement (handling vague tasks)
+* Improving Step 1 quality
+* Lightweight interaction (minimal)
+* Optional UI (only if it improves access)
 
 ***
 
@@ -223,10 +211,12 @@ This is not just a tool.
 
 It is:
 
-> ✅ A behavior trigger
+✅ **a behavior trigger**
 
-The value is not in the output alone  
-but in what it makes you **do next**
+The value is not in the output itself  
+but in:
+
+> what it makes you do next
 
 ***
 
