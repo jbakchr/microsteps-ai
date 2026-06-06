@@ -1,53 +1,38 @@
 # microsteps-ai
 
-A simple, local AI CLI tool that helps reduce friction when starting tasks by generating small, actionable micro-steps.
+A simple, local AI CLI tool that helps reduce friction when starting tasks.
+
+It does one thing:
+
+> ✅ It makes starting feel easier
 
 ---
 
-## 🧠 Purpose
+## 🧠 Why this exists
 
-This project is **not** about productivity or planning.  
-It is about:
+Starting tasks is often the hardest part.
 
-✅ Helping initiate action in the real world  
+Not because we don’t know what to do  
+—but because the **friction to begin is too high**.
 
-The goal is not:
-- to generate “perfect” steps  
-- to optimize completion  
+This tool is built on a simple idea:
 
-The goal is:
-
-✅ To make starting feel easy  
+> ✅ You don’t need better plans  
+> ✅ You need easier first steps
 
 ---
 
-## 🎯 Success Criteria
+## 🎯 What it does
 
-The system is successful if:
-
-- ✅ You start doing something  
-- ✅ The first step feels easy  
-- ✅ Resistance is reduced  
-
----
-
-## ⚙️ How It Works
-
-The system follows a simple loop:
+You give it a task:
 
 ```
 
-input → generate → act
+clean kitchen
 
 ```
 
-- You provide a task (e.g. “clean kitchen”)  
-- The system generates **3 small micro-steps**  
-- You act immediately (ideally without overthinking)  
-
----
-
-## ✅ Example Output
+It gives you:
 
 ```
 
@@ -58,31 +43,27 @@ Step 3: Turn on the tap
 
 ```
 
----
+That’s it.
 
-## 🧠 Key Learnings So Far
-
-- ✅ **Specific inputs → much better outputs**
-  - "clean kitchen" > "clean apartment"
-
-- ✅ **Step 1 is everything**
-  - It must feel almost trivial
-
-- ✅ **Momentum matters more than structure**
-  - Steps 2–3 are optional
-
-- ✅ **Physical actions work best**
-  - Avoid thinking/planning steps
-
-- ✅ The system works even if outputs are imperfect
-
-- ❗ The biggest risk is **not using the tool**
+No planning.  
+No structure.  
+Just something easy enough to start.
 
 ---
 
-## ⚡ Usage (zero setup behavior)
+## ✅ Success criteria
 
-### Run from anywhere:
+The tool is successful if:
+
+- ✅ You start doing something
+- ✅ Step 1 feels almost trivial
+- ✅ Resistance is lower than before
+
+---
+
+## ⚙️ Usage
+
+Run from anywhere:
 
 ```bash
 microsteps
@@ -98,65 +79,58 @@ What do you want to do?
 
 → Start immediately
 
-***
+---
 
 ## 🚀 Installation
 
 ### Requirements
 
-* Python 3.11+
-* Ollama running locally
+- Python 3.11+
+- Ollama running locally
 
-***
+---
 
 ### Install CLI globally
 
-From project root:
+From the project root:
 
 ```bash
 pip install -e .
 ```
 
-This makes the CLI available globally:
+This makes the command available globally:
 
 ```bash
 microsteps
 ```
 
-***
+---
 
-## 🧱 Project Structure
+## 🧱 Project structure
 
 ```
 microsteps/
-├── core/           → behavior + generation logic
-│
-interfaces/
-└── cli/           → command-line interface
+├── cli.py        → command-line interface
+└── generate.py   → micro-step generation logic
 
 docs/
-└── FEEDBACK.md    → real-world usage logging
+└── FEEDBACK.md   → real-world usage logging
 ```
 
-***
+---
 
-## 🧠 Architecture Principles
+## 🧠 Core principles
 
-* ✅ Core = **behavior + logic**
-* ✅ CLI = **simple and frictionless**
-* ✅ System = **local, fast, always available**
+- ✅ Reduce friction to start
+- ✅ Prioritize action over planning
+- ✅ Keep everything simple and fast
+- ✅ Optimize for real-world use, not perfect output
 
-There is **no backend server**.
+---
 
-The system is designed to:
+## 🧪 Feedback loop
 
-> ✅ minimize friction between intention and action
-
-***
-
-## 🧪 Feedback Loop
-
-All real-world usage is tracked in:
+Real usage is tracked in:
 
 ```
 docs/FEEDBACK.md
@@ -164,63 +138,51 @@ docs/FEEDBACK.md
 
 Each entry captures:
 
-* Input
-* Output
-* Whether you acted
-* How it felt
+- Input
+- Output
+- Whether you acted
+- How it felt
 
-***
+---
 
-## 🧭 Current Phase
+## 🧭 Current focus
 
-The project is in a:
+This project is in a:
 
-✅ **Usage + learning phase**
+> ✅ usage + learning phase
 
-Focus is on:
+Focus:
 
-* what actually triggers action
-* what reduces friction
-* what leads to real-world behavior
+- What actually triggers action
+- What makes Step 1 easier
+- What reduces friction in practice
 
-***
+---
 
-## 🔮 Possible Future Directions
+## 🚫 Non-goals
 
-(Only if supported by real usage)
+- Not a productivity system
+- Not a task manager
+- Not a feature-rich app
+- Not optimized for scale
 
-* Input refinement (handling vague tasks)
-* Improving Step 1 quality
-* Lightweight interaction (minimal)
-* Optional UI (only if it improves access)
+---
 
-***
+## 🧠 Core idea
 
-## 🚫 Non-Goals
-
-* Not a productivity system
-* Not a task manager
-* Not a complex AI framework
-* Not optimized for scale
-
-***
-
-## 🧠 Core Idea
-
-This is not just a tool.
+This is not a tool for generating steps.
 
 It is:
 
-✅ **a behavior trigger**
+> ✅ a behavior trigger
 
 The value is not in the output itself  
 but in:
 
 > what it makes you do next
 
-***
+---
 
 ## 📄 License
 
 MIT
-
