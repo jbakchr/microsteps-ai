@@ -8,8 +8,8 @@ dependencies = [
 ]
 
 [project.scripts]
-microsteps = "interfaces.cli.main:main"
+microsteps = "microsteps.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["microsteps*", "interfaces*"]
+include = ["microsteps*"]

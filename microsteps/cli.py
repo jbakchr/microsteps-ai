@@ -3,7 +3,7 @@ import itertools
 import sys
 import time
 
-from microsteps.core.generate import generate_microsteps  # ✅ NEW
+from microsteps.generate import generate_microsteps  # ✅ NEW
 
 BOLD = "\033[1m"
 RESET = "\033[0m"
